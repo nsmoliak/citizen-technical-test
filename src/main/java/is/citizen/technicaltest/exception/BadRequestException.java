@@ -1,6 +1,6 @@
 package is.citizen.technicaltest.exception;
 
-public class BadRequestException extends ServiceException {
+public class BadRequestException extends RuntimeException {
     public BadRequestException(String message) {
         super(message);
     }

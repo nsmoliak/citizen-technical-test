@@ -1,6 +1,7 @@
 package is.citizen.technicaltest.utils;
 
 import is.citizen.technicaltest.exception.BadRequestException;
+import is.citizen.technicaltest.exception.ServiceException;
 import is.citizen.technicaltest.model.PersonModel;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
@@ -36,6 +37,8 @@ public class CsvHelper {
         } catch (IOException e) {
             throw new BadRequestException("Fail to parse CSV file. Something is wrong with the contents of the file. "
                     + "Please check and try again.", e);
+        } catch (Exception e) {
+            throw new ServiceException("Failed to process file, please try again later.", e);
         }
     }
 }

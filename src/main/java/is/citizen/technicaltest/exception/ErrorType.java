@@ -5,7 +5,8 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 public enum ErrorType {
-    BAD_REQUEST("bad_request", HttpStatus.BAD_REQUEST);
+    BAD_REQUEST("bad_request", HttpStatus.BAD_REQUEST),
+    SERVICE_ERROR("service_error", HttpStatus.INTERNAL_SERVER_ERROR);
 
     private final String type;
     private final String title;
