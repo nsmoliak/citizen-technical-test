@@ -25,10 +25,6 @@ There was no directory or api from where to get the data, so possible omissions 
   * Filling in an empty state or country code occurs when the data contains the same city with the specified state and country code.
   * Filling in the second address occurs if there is a connection in the postcodes or the first and second addresses.
   * Filling in the last name occurs for people with the same address.
-  
-### Maven
-
-https://maven.apache.org/download.cgi
 
 ### Cloning app
 1. `git clone https://github.com/nsmoliak/citizen-technical-test.git`
@@ -41,7 +37,7 @@ https://maven.apache.org/download.cgi
 1. `./mvnw.cmd clean install`
 2. `./mvnw spring-boot:run`
 
-### Run app manually
+### Or run app manually
 
 ## Application usage
 
