@@ -8,13 +8,19 @@
     <artifactId>citizen-technical-test</artifactId>
     <version>1.0.0</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.8</version>
+    </parent>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <os-maven-plugin.version>1.6.1</os-maven-plugin.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <checkstyle-maven-plugin.version>3.1.2</checkstyle-maven-plugin.version>
-        <spring.version>2.4.8</spring.version>
+        <spring.version>2.6.0</spring.version>
         <common-csv.version>1.8</common-csv.version>
         <lombok.version>1.18.22</lombok.version>
         <swagger.version>3.0.0</swagger.version>
@@ -24,12 +30,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -56,6 +60,10 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 
