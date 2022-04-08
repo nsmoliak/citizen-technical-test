@@ -17,7 +17,6 @@ Citizen API Technical test
 * Filtering by selected parameter
 * Grouping by selected parameter
 * Normalization
-* Tests
 
 #### Normalization
 

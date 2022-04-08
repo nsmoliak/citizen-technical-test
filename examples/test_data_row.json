@@ -1,15 +1,15 @@
 [
   {
-    "firstname": "Alan",
-    "surname": "Johnson",
-    "city": "London",
-    "state": "",
-    "postcode": "EC14AA",
+    "firstname": "Fred",
+    "surname": "Smith",
+    "city": "Glasgow",
+    "state": "Glasgow",
+    "postcode": "G10 1AA",
     "gender": "M",
-    "address1": "Tower House",
-    "address2": "4 Clements Lane",
-    "countrycode": "",
-    "dateofbirth": "4-4-1974"
+    "address1": "Customs House",
+    "address2": "1 Long Street",
+    "countrycode": "UK",
+    "dateofbirth": "1-1-1970"
   },
   {
     "firstname": "Bob",
@@ -24,54 +24,6 @@
     "dateofbirth": "2-2-1971"
   },
   {
-    "firstname": "Fred",
-    "surname": "Smith",
-    "city": "Glasgow",
-    "state": "Glasgow",
-    "postcode": "G10 1AA",
-    "gender": "M",
-    "address1": "Customs House",
-    "address2": "1 Long Street",
-    "countrycode": "UK",
-    "dateofbirth": "1-1-1970"
-  },
-  {
-    "firstname": "Helen",
-    "surname": "Mirren",
-    "city": "Liverpool",
-    "state": "Liverpool",
-    "postcode": "LP10GG",
-    "gender": "F",
-    "address1": "6 The Bells",
-    "address2": "",
-    "countrycode": "UK",
-    "dateofbirth": "9-9-1979"
-  },
-  {
-    "firstname": "Linda",
-    "surname": "James",
-    "city": "Leeds",
-    "state": "West Yorkshire",
-    "postcode": "L12 7EE",
-    "gender": "F",
-    "address1": "8 Wrong Road",
-    "address2": "",
-    "countrycode": "GB",
-    "dateofbirth": "8-8-1978"
-  },
-  {
-    "firstname": "Mike",
-    "surname": "Ward",
-    "city": "Leeds",
-    "state": "West Yorkshire",
-    "postcode": "L11 6AA",
-    "gender": "M",
-    "address1": "8 Wrong Rd",
-    "address2": "",
-    "countrycode": "UK",
-    "dateofbirth": "6-6-1976"
-  },
-  {
     "firstname": "Nancy",
     "surname": "Bayliss",
     "city": "Brighton",
@@ -84,16 +36,16 @@
     "dateofbirth": "3-3-1973"
   },
   {
-    "firstname": "Rebecca",
-    "surname": "May",
+    "firstname": "Alan",
+    "surname": "Johnson",
     "city": "London",
-    "state": "London",
-    "postcode": "EC1 4AA",
-    "gender": "F",
-    "address1": "4 Clements Ln",
-    "address2": "",
-    "countrycode": "UK",
-    "dateofbirth": "10-10-1980"
+    "state": "",
+    "postcode": "EC14AA",
+    "gender": "M",
+    "address1": "Tower House",
+    "address2": "4 Clements Lane",
+    "countrycode": "",
+    "dateofbirth": "4-4-1974"
   },
   {
     "firstname": "Roger",
@@ -108,6 +60,18 @@
     "dateofbirth": "5-5-1975"
   },
   {
+    "firstname": "Mike",
+    "surname": "Ward",
+    "city": "Leeds",
+    "state": "West Yorkshire",
+    "postcode": "L11 6AA",
+    "gender": "M",
+    "address1": "8 Wrong Rd",
+    "address2": "",
+    "countrycode": "UK",
+    "dateofbirth": "6-6-1976"
+  },
+  {
     "firstname": "Sarah",
     "surname": "",
     "city": "Glasgow",
@@ -118,5 +82,41 @@
     "address2": "",
     "countrycode": "UK",
     "dateofbirth": "7-7-1977"
+  },
+  {
+    "firstname": "Linda",
+    "surname": "James",
+    "city": "Leeds",
+    "state": "West Yorkshire",
+    "postcode": "L12 7EE",
+    "gender": "F",
+    "address1": "8 Wrong Road",
+    "address2": "",
+    "countrycode": "GB",
+    "dateofbirth": "8-8-1978"
+  },
+  {
+    "firstname": "Helen",
+    "surname": "Mirren",
+    "city": "Liverpool",
+    "state": "Liverpool",
+    "postcode": "LP10GG",
+    "gender": "F",
+    "address1": "6 The Bells",
+    "address2": "",
+    "countrycode": "UK",
+    "dateofbirth": "9-9-1979"
+  },
+  {
+    "firstname": "Rebecca",
+    "surname": "May",
+    "city": "London",
+    "state": "London",
+    "postcode": "EC1 4AA",
+    "gender": "F",
+    "address1": "4 Clements Ln",
+    "address2": "",
+    "countrycode": "UK",
+    "dateofbirth": "10-10-1980"
   }
 ]
