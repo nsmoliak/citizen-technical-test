@@ -84,7 +84,9 @@ public class PersonServiceImpl implements PersonService {
             field.setAccessible(true);
             return field.get(person).toString();
         } catch (NoSuchFieldException | IllegalAccessException ex) {
-            throw new BadRequestException(MessageFormat.format("The parameter {0} is invalid", fieldName), ex);
+            throw new BadRequestException(MessageFormat.format("The parameter {0} is invalid. "
+                    + "Parameters can be 'firstname', 'surname', 'firstAddress', 'secondAddress', "
+                    + "'city', 'state', 'postcode', 'countryCode', 'gender', 'dateOfBirth'.", fieldName), ex);
         }
     }
 

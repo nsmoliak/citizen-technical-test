@@ -9,10 +9,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import springfox.documentation.annotations.ApiIgnore;
 
 import static is.citizen.technicaltest.exception.ErrorType.BAD_REQUEST;
 
 @Slf4j
+@ApiIgnore
 @RestControllerAdvice
 @RequiredArgsConstructor
 public class AppExceptionHandler {
