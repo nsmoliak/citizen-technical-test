@@ -25,12 +25,12 @@ There was no directory or api from where to get the data, so possible omissions 
   * Filling in an empty state or country code occurs when the data contains the same city with the specified state and country code.
   * Filling in the second address occurs if there is a connection in the postcodes or the first and second addresses.
   * Filling in the last name occurs for people with the same address.
+  
+## Running app
 
 ### Cloning app
 1. `git clone https://github.com/nsmoliak/citizen-technical-test.git`
 2. `cd citizen-technical-test`
-
-## Running app
 
 ### App via maven
 
