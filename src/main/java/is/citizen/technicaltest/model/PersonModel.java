@@ -1,16 +1,13 @@
 package is.citizen.technicaltest.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import java.util.UUID;
-
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PersonModel {
-    @JsonIgnore
-    private UUID id;
     private String firstname;
     private String surname;
     @JsonProperty("address1")

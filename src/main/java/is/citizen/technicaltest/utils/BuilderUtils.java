@@ -45,7 +45,6 @@ public class BuilderUtils {
 
     public static PersonModel buildPersonFromCsvRecord(CSVRecord csv) {
         return PersonModel.builder()
-                .id(UUID.randomUUID())
                 .firstname(csv.get(FIRSTNAME_FIELD))
                 .surname(csv.get(SURNAME_FIELD))
                 .firstAddress(csv.get(FIRST_ADDRESS_FIELD))
