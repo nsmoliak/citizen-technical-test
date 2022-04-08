@@ -25,17 +25,7 @@ There was no directory or api from where to get the data, so possible omissions 
   * Filling in an empty state or country code occurs when the data contains the same city with the specified state and country code.
   * Filling in the second address occurs if there is a connection in the postcodes or the first and second addresses.
   * Filling in the last name occurs for people with the same address.
-
-## Installation
-
-### Docker
-
-https://docs.docker.com/engine/install/
-
-### Docker Compose
-
-https://docs.docker.com/compose/install/
-
+  
 ### Maven
 
 https://maven.apache.org/download.cgi
@@ -45,12 +35,6 @@ https://maven.apache.org/download.cgi
 2. `cd citizen-technical-test`
 
 ## Running app
-
-### App via docker-compose
-
-1. build: `docker image build -f Dockerfile -t test/citizen-technical-test .`
-2. `cd docker/`
-3. `docker-compose -f docker-compose.yml up -d`
 
 ### App via maven
 
