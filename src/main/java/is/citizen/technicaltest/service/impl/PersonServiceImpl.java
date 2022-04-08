@@ -7,6 +7,7 @@ import is.citizen.technicaltest.dto.SortDto;
 import is.citizen.technicaltest.model.SortType;
 import is.citizen.technicaltest.service.PersonService;
 import is.citizen.technicaltest.utils.BuilderUtils;
+import is.citizen.technicaltest.utils.ComparativeHelper;
 import is.citizen.technicaltest.utils.CsvHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,13 @@ import org.springframework.web.multipart.MultipartFile;
 import java.lang.reflect.Field;
 import java.text.MessageFormat;
 import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import static is.citizen.technicaltest.utils.BuilderUtils.formatAddress;
+import static is.citizen.technicaltest.utils.CommonConstants.*;
+import static is.citizen.technicaltest.utils.ComparativeHelper.*;
 
 @Slf4j
 @Service
@@ -45,10 +52,23 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public List<PersonModel> normalize(List<PersonModel> personModels) {
+    public List<PersonModel> normalize(List<PersonModel> persons) {
         log.info("Normalise and complete all the missing data fields for all persons & addresses");
-
-        return null;
+        return persons
+                .stream()
+                .peek(this::updateAddressInformation)
+                .peek(p1 -> peekPersons(persons, p2 -> countryCodeCondition(p1, p2),
+                        p2 -> p1.setCountryCode(p2.getCountryCode())))
+                .peek(p1 -> peekPersons(persons, p2 -> stateCondition(p1, p2), p2 -> p1.setState(p2.getState())))
+                .peek(p1 -> peekPersons(persons, p2 -> surnameCondition(p1, p2), p2 -> p1.setSurname(p2.getSurname())))
+                .peek(p1 -> peekPersons(persons,
+                        p2 -> !isEmpty(p2.getFirstname()) && !isEmpty(p2.getPostcode()),
+                        p2 -> {
+                            if (getSecondAddress(p1, p2) != null) {
+                                p1.setSecondAddress(getSecondAddress(p1, p2));
+                            }
+                        }))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -85,5 +105,37 @@ public class PersonServiceImpl implements PersonService {
                 .stream()
                 .filter(person -> Objects.equals(getFieldValue(person, filter.getParameter()), filter.getValue()))
                 .collect(Collectors.toList());
+    }
+
+    private void updateAddressInformation(PersonModel person) {
+        if (person.getCountryCode().equals(GB_COUNTRY_CODE)) {
+            person.setCountryCode(UK_COUNTRY_CODE);
+        }
+        person.setPostcode(person.getPostcode().replaceAll(" ", ""));
+        person.setFirstAddress(formatAddress(person.getFirstAddress()));
+        person.setSecondAddress(formatAddress(person.getSecondAddress()));
+    }
+
+    private String getSecondAddress(PersonModel p1, PersonModel p2) {
+        if ((ComparativeHelper.isEmpty(p1.getSecondAddress()) && !ComparativeHelper.isEmpty(p2.getFirstAddress()))) {
+            if (p1.getFirstAddress().equals(p2.getFirstAddress()) && !ComparativeHelper.isEmpty(p2.getSecondAddress())) {
+                return p2.getSecondAddress();
+            }
+            if (p1.getFirstAddress().equals(p2.getSecondAddress())) {
+                return p2.getFirstAddress();
+            }
+            if (p1.getPostcode().equals(p2.getPostcode())) {
+                return p1.getFirstAddress().equals(p2.getFirstAddress()) ? p2.getSecondAddress() : p2.getFirstAddress();
+            }
+        }
+        return null;
+    }
+
+    private void peekPersons(List<PersonModel> persons, Predicate<PersonModel> condition, Consumer<PersonModel> action) {
+        persons
+                .stream()
+                .filter(condition)
+                .findFirst()
+                .ifPresent(action);
     }
 }

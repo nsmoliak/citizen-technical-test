@@ -11,4 +11,17 @@ public interface CommonConstants {
     String COUNTRY_CODE_FIELD = "countrycode";
     String GENDER_FIELD = "gender";
     String DATE_OF_BIRTH_FIELD = "dateofbirth";
+
+    String UK_COUNTRY_CODE = "UK";
+    String GB_COUNTRY_CODE = "GB";
+
+    String RD_CONSTANT = "Rd";
+    String AVE_CONSTANT = "Ave";
+    String LN_CONSTANT = "Ln";
+
+    String ROAD_CONSTANT = "Road";
+    String AVENUE_CONSTANT = "Avenue";
+    String LANE_CONSTANT = "Lane";
+
+
 }

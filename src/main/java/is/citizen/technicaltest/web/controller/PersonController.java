@@ -24,11 +24,11 @@ public class PersonController {
             @RequestParam(value = "group", required = false) String group,
             @RequestParam(value = "normalize", required = false) boolean isNormalize) {
         List<PersonModel> persons = personService.processDataFromFile(file);
-        if (sort != null || filter != null) {
-            persons = personService.sortAndFilter(persons, sort, filter);
-        }
         if (isNormalize) {
             persons = personService.normalize(persons);
+        }
+        if (sort != null || filter != null) {
+            persons = personService.sortAndFilter(persons, sort, filter);
         }
         return group != null
                 ? new ResponseEntity<>(personService.groupPersons(persons, group), HttpStatus.OK)
