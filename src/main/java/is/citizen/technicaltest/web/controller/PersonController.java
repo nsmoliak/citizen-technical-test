@@ -37,11 +37,12 @@ public class PersonController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> getPersons(@RequestParam(value = "sort", required = false) String sort,
-                                        @RequestParam(value = "filter", required = false) String filter,
-                                        @RequestParam(value = "group", required = false) String group,
-                                        @RequestParam(value = "normalize", required = false) boolean isNormalize,
-                                        @RequestBody List<PersonModel> persons) {
+    public ResponseEntity<?> getPersons(
+            @RequestParam(value = "sort", required = false) String sort,
+            @RequestParam(value = "filter", required = false) String filter,
+            @RequestParam(value = "group", required = false) String group,
+            @RequestParam(value = "normalize", required = false) boolean isNormalize,
+            @RequestBody List<PersonModel> persons) {
         if (isNormalize) {
             persons = personService.normalize(persons);
         }

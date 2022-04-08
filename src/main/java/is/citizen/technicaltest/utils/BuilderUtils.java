@@ -8,7 +8,6 @@ import is.citizen.technicaltest.model.SortType;
 import org.apache.commons.csv.CSVRecord;
 
 import java.text.MessageFormat;
-import java.util.UUID;
 
 import static is.citizen.technicaltest.utils.CommonConstants.*;
 import static is.citizen.technicaltest.utils.CommonConstants.DATE_OF_BIRTH_FIELD;
