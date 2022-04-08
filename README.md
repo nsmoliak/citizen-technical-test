@@ -47,13 +47,27 @@ https://maven.apache.org/download.cgi
 After launch, you can check if the application has started by clicking on the link in the [Actuator](http://localhost:8080/api/actuator/health) or follow the link for the [Swagger](http://localhost:8080/api/swagger-ui/#/).
 
 ## Example
-1. An example of a request with a csv file with all parameters:
+
+1. An example of a request with a csv file:
+   `curl --location --request POST 'http://localhost:8080/api/persons/file' \
+   --form 'file={test_file}'`
+
+Example of test_file you can find in examples dir.
+
+2. An example of a request with a JSON data:
+   `curl --location --request POST 'http://localhost:8080/api/persons' \
+   --header 'Content-Type: application/json' \
+   --data-raw '{test_data_raw}'`
+
+Example of test_data_raw you can find in examples dir.
+
+3. An example of a request with a csv file with all parameters:
 `curl --location --request POST 'http://localhost:8080/api/persons/file?sort=firstname,ASC&group=countryCode&normalize=true' \
 --form 'file={test_file}'`
 
 Example of test_file you can find in examples dir.
 
-2. An example of a request with a JSON data with all parameters:
+4. An example of a request with a JSON data with all parameters:
     `curl --location --request POST 'http://localhost:8080/api/persons?sort=firstname,ASC&group=countryCode&normalize=true&filter=city,London' \
    --header 'Content-Type: application/json' \
    --data-raw '{test_data_raw}'`
